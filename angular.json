@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WCIC"
+    }
+  },
+  "defaultProject": "WCIC",
+  "cli": {
+    "analytics": "eb978218-fca3-4f9e-bed6-f2d925502d14"
+  }
 }
