@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { NgScrollbarModule } from 'ngx-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,7 +17,8 @@ import { RemoveTagsPipe } from './shared/pipes/remove-tags.pipe';
 import { FavouritesListComponent } from './components/favourites-list/favourites-list.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
-
+import {FormsModule} from '@angular/forms';
+import { IngredientComponent } from './components/ingredients/ingredient/ingredient.component';
 
 @NgModule({
   declarations: [
@@ -27,20 +28,23 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
     RecipeCardComponent,
     RemoveTagsPipe,
     FavouritesListComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    IngredientComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    HttpClientModule,
-    MatCardModule,
-    MatButtonModule,
-    DragDropModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        HttpClientModule,
+        MatCardModule,
+        MatButtonModule,
+        DragDropModule,
+        NgScrollbarModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

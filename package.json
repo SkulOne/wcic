@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
     "@conakryc/spoonacular-wrapper": "^1.0.1",
+    "angular-inline-editors": "^2.0.4",
+    "angular2-click-to-edit": "^1.0.52",
     "ng-resize-observer": "^1.0.1",
     "ngx-scrollbar": "^7.3.0",
     "rxjs": "~6.5.5",
