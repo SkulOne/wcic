@@ -1,0 +1,36 @@
+@import "src/app/shared/styles/mixins";
+
+:host{
+  flex-direction: column;
+  @include base-shadow;
+  align-items: center;
+  background: #fdfafa;
+  border-radius: 4px;
+  width: 55%;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .example-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+::ng-deep .ng-native-scrollbar-hider {
+  padding: 0 1rem;
+}

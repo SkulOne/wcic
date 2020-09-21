@@ -1,0 +1,13 @@
+<img alt="" class="food-img" [class.hover-image]="isSmall" [src]="recipe.imgSrc" width="100" height="100">
+<div class="description">
+  <div class="header">
+    <span>{{recipe.title}}</span>
+    <button mat-icon-button aria-label="Add" (click)="addToFavorite()">
+      <mat-icon color="primary">favorite</mat-icon>
+    </button>
+  </div>
+
+  <div class="content">
+    {{recipe.instructions | removeTags}}
+  </div>
+</div>

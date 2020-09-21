@@ -13,7 +13,7 @@ export class Recipe{
   private readonly _steps: [any];
   private readonly _ingredients: Ingredient[];
 
-  constructor(item) {
+  constructor(item ) {
     this._id = item.id;
     this._title = item.title;
     this._sourceUrl = item.sourceUrl;
@@ -26,7 +26,6 @@ export class Recipe{
     this._isVegan = item.vegan;
     this._isVegetarian = item.vegetarian;
   }
-
 
   get id(): number {
     return this._id;

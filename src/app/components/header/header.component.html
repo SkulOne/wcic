@@ -1,0 +1,13 @@
+<div class="logo-container">
+<img src="../../../assets/image/LogoWCIC.png" width="45" alt=""/>
+<span>What can I cook?</span>
+</div>
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Search a dish</mat-label>
+    <input matInput placeholder="Placeholder" [(ngModel)]="dishName" name="dishName">
+    <button matSuffix type="submit" mat-icon-button aria-label="Search dish" (click)="searchDish()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</form>

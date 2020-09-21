@@ -1,0 +1,69 @@
+@import "~src/app/shared/styles/mixins";
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: #f44336;
+  @include base-shadow;
+
+  .logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: Covered By Your Grace, serif;
+    line-height: 0.9;
+    font-size: 1.2rem;
+    width: 90px;
+  }
+
+  .search-btn, .search {
+    border: 1px solid black;
+
+  }
+
+
+  .search {
+    border-radius: 20px 0 0 20px;
+    padding-left: 7px;
+  }
+
+  .search-btn {
+    background: #fff;
+    border-radius: 0 20px 20px 0;
+  }
+
+  ::ng-deep{
+
+    .mat-form-field-underline{
+      display: none
+    }
+
+    .mat-form-field-appearance-fill .mat-form-field-flex{
+      background: white;
+      border-radius: 4px;
+    }
+
+    .mat-form-field-wrapper{
+      padding: 0;
+    }
+
+    .mat-form-field.mat-focused .mat-form-field-label{
+      color: rgba(0,0,0,0.6);
+    }
+
+  }
+
+}
+
+
+.mat-form-field-label{
+  color: rgba(0,0,0,0.6);
+}
+//.mat-form-field-outline-start, .mat-form-field-outline-gap, .mat-form-field-outline-end {
+//
+//}
+//
+

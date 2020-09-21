@@ -1,0 +1,25 @@
+<ng-scrollbar [visibility]="'always'">
+
+Favorites
+<div cdkDropListGroup>
+  <div class="container">
+    <div cdkDropList
+         class="example-list"
+         [cdkDropListData]="favoritesRecipes"
+         (cdkDropListDropped)="drop($event)"
+    >
+
+      <app-recipe-card
+        *ngFor="let favorite of favoritesRecipes"
+
+
+        cdkDrag
+        class="example-box no-image"
+        [recipe]="favorite"
+      ></app-recipe-card>
+
+    </div>
+
+  </div>
+</div>
+</ng-scrollbar>

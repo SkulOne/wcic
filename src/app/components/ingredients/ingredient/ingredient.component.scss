@@ -1,0 +1,31 @@
+@import "src/app/shared/styles/mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @include base-shadow;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  padding: .7rem 1rem;
+  margin-bottom: 10px;
+  button {
+    align-self: flex-end;
+    mat-icon {
+      font-size: 1rem;
+    }
+  }
+
+  .description {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+      font-size: 1rem;
+    }
+  }
+}

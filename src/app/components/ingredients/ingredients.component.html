@@ -1,0 +1,11 @@
+<ng-scrollbar>
+  Ingredients
+  <mat-form-field appearance="standard">
+    <mat-label>Add ingredient</mat-label>
+    <input matInput placeholder="Ingredient name" #inputElement>
+    <mat-icon (click)="add(inputElement.value)" matSuffix>add</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+  <button mat-raised-button color="accent" class="search-btn" (click)="searchByIngredients()">Search by ingredients</button>
+    <app-ingredient *ngFor="let ingredient of ingredients" [ingredient]="ingredient"></app-ingredient>
+</ng-scrollbar>
