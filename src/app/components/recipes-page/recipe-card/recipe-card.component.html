@@ -2,12 +2,20 @@
 <div class="description">
   <div class="header">
     <span>{{recipe.title}}</span>
-    <button mat-icon-button aria-label="Add" (click)="addToFavorite()">
-      <mat-icon color="primary">favorite</mat-icon>
-    </button>
+    <div>
+      <button mat-icon-button aria-label="Add" (click)="showDishPage()">
+        <mat-icon color="accent">fullscreen</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Add" (click)="addToFavorite()">
+        <mat-icon color="primary">favorite</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Add" (click)="removeFromFavorite()" *ngIf="isSmall">
+        <mat-icon color="primary">close</mat-icon>
+      </button>
+    </div>
   </div>
 
   <div class="content">
-    {{recipe.instructions | removeTags}}
+    {{recipe.instructions | removeTags | takeStr:330}}
   </div>
 </div>

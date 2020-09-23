@@ -1,3 +1,13 @@
 @mixin base-shadow {
-  box-shadow:0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+}
+
+@mixin card($background-color:white, $box-shadow:none) {
+  background: $background-color;
+  border-radius: 4px;
+  @if ($box-shadow == none) {
+    @include base-shadow;
+  } @else {
+    box-shadow: $box-shadow;
+  }
 }

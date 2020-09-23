@@ -9,10 +9,8 @@ Favorites
          (cdkDropListDropped)="drop($event)"
     >
 
-      <app-recipe-card
+      <app-recipe-card (close)="removeFromFavorite(favorite)"
         *ngFor="let favorite of favoritesRecipes"
-
-
         cdkDrag
         class="example-box no-image"
         [recipe]="favorite"

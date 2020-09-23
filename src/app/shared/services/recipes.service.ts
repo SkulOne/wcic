@@ -10,7 +10,7 @@ import {Recipe} from '../classes/Recipe';
 
 export class RecipesService {
   get recipes(): Subject<Recipe[]> {
-    return this._recipes;
+    return this._recipesBuf;
   }
 
   constructor(private httpClient: HttpClient) {
@@ -18,9 +18,9 @@ export class RecipesService {
 
   static URL = 'https://api.spoonacular.com/recipes';
 
-  private _recipes = new Subject<Recipe[]>();
+  private _recipesBuf = new Subject<Recipe[]>();
 
-  private readonly API_KEY = 'apiKey=587f632ba4d14ddd9b0fd446e4e88350';
+  private readonly API_KEY = 'apiKey=66c2c34538034f3eaadf2a5ceb32e5bd';
 
   public getRandom(size= 10): void {
     const response = this.httpClient.get(`${RecipesService.URL}/random?${this.API_KEY}&number=${size}`);
@@ -63,6 +63,12 @@ export class RecipesService {
       const dishes = this.createRecipes(dishesArray);
       this.recipes.next(dishes);
     });
+  }
+
+  public getById(id): void{
+    this.recipes.asObservable().subscribe(
+      log => console.log(log)
+    );
   }
 
   private createRecipes(array: any[]): Recipe[]{

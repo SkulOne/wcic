@@ -19,6 +19,16 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
 import {FormsModule} from '@angular/forms';
 import { IngredientComponent } from './components/ingredients/ingredient/ingredient.component';
+import { DishPageModalComponent } from './components/dish-page-modal/dish-page-modal.component';
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { TakeStr } from './shared/pipes/take-str';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
 
 @NgModule({
   declarations: [
@@ -29,7 +39,9 @@ import { IngredientComponent } from './components/ingredients/ingredient/ingredi
     RemoveTagsPipe,
     FavouritesListComponent,
     IngredientsComponent,
-    IngredientComponent
+    IngredientComponent,
+    DishPageModalComponent,
+    TakeStr
   ],
     imports: [
         BrowserModule,
@@ -44,8 +56,14 @@ import { IngredientComponent } from './components/ingredients/ingredient/ingredi
         DragDropModule,
         NgScrollbarModule,
         FormsModule,
+        SwiperModule,
     ],
-  providers: [],
+  providers: [
+    {
+      provide:SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

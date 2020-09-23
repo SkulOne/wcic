@@ -26,8 +26,10 @@
     "angular2-click-to-edit": "^1.0.52",
     "ng-resize-observer": "^1.0.1",
     "ngx-scrollbar": "^7.3.0",
+    "ngx-swiper-wrapper": "^10.0.0",
     "rxjs": "~6.5.5",
     "spoonacular_api": "^1.0.0",
+    "swiper": "^6.2.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },

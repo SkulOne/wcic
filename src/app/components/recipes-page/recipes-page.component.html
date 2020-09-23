@@ -1,25 +1,22 @@
 <ng-scrollbar [visibility]="'native'">
 Recipes
 <div cdkDropListGroup>
-
   <div class="container">
         <div cdkDropList
              class="example-list"
              [cdkDropListData]="recipes"
              (cdkDropListDropped)="drop($event)"
         >
-
     <app-recipe-card
       *ngFor="let recipe of recipes"
-
-
       cdkDrag
       class="example-box"
       [recipe]="recipe"
+      (showButtonClick)="onOpen($event)"
     ></app-recipe-card>
       </div>
-
   </div>
-
 </div>
 </ng-scrollbar>
+<app-dish-page-modal [recipe]="selectedRecipe" *ngIf="selectedRecipe">
+</app-dish-page-modal>

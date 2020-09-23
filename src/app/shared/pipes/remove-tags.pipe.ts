@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RemoveTagsPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return value.toString().replace(/<\/?[a-zA-Z]+>/gi, '');
+  transform(value: string, ...args: unknown[]): unknown {
+    return value.replace(/<\/?[a-zA-Z]+>/gi, '');
   }
 
 }

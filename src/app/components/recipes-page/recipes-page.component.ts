@@ -14,6 +14,7 @@ export class RecipesPageComponent implements OnInit {
   }
 
   recipes: Recipe[];
+  selectedRecipe: Recipe;
 
   ngOnInit(): void {
     this.recipesService.getRandom();
@@ -32,5 +33,9 @@ export class RecipesPageComponent implements OnInit {
         event.currentIndex);
 
     }
+  }
+
+  onOpen(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
   }
 }

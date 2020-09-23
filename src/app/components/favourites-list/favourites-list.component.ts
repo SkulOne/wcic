@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {FavoritesService} from '../../shared/services/favourites.service';
+import {Recipe} from '../../shared/classes/Recipe';
 
 @Component({
   selector: 'app-favourites-list',
@@ -8,6 +9,8 @@ import {FavoritesService} from '../../shared/services/favourites.service';
   styleUrls: ['./favourites-list.component.scss']
 })
 export class FavouritesListComponent implements OnInit {
+
+  @ViewChild('app-recipe-card') test: ElementRef;
 
   constructor(private favoritesService: FavoritesService) {
   }
@@ -29,5 +32,14 @@ export class FavouritesListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
+  }
+
+  removeFromFavorite(favorite: Recipe): void {
+    console.log('close event triggered');
+    const index = this.favoritesRecipes.findIndex(recipe => {
+      return recipe.id === favorite.id;
+    });
+    console.log(index);
+    this.favoritesRecipes = [...this.favoritesRecipes.slice(0, index), ...this.favoritesRecipes.slice(index, this.favoritesRecipes.length)];
   }
 }
